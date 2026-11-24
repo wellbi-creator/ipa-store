@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b0d" />
+  <title>iPA Store</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{color-scheme:dark;--bg:#0b0b0d;--panel:#151518;--panel2:#1c1c20;--line:#29292f;--text:#f6f5f5;--muted:#929198;--red:#f04444;--red2:#b91f2b;--radius:20px}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}.app-shell{max-width:560px;min-height:100dvh;margin:auto;padding:0 18px 110px}.topbar{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--text);font-size:12px;font-weight:800;letter-spacing:2px}.brand-mark{background:var(--red);color:white;border-radius:9px;padding:7px 8px;font-size:13px;letter-spacing:-.7px}.icon-btn,.close-btn{border:1px solid var(--line);background:var(--panel);color:white;border-radius:50%;width:38px;height:38px;font-weight:800}.icon-btn span{display:grid;place-items:center}.screen{display:none;animation:fade .22s ease}.screen.active{display:block}@keyframes fade{from{opacity:.3;transform:translateY(5px)}to{opacity:1;transform:none}}.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#211014,#151114 55%,#101013);border:1px solid #3b2025;border-radius:26px;padding:26px 22px 24px;margin:8px 0 30px;min-height:260px}.eyebrow{font-size:9px;font-weight:800;letter-spacing:2px;color:#d36a70}.live-dot{display:inline-block;width:6px;height:6px;background:var(--red);border-radius:50%;margin-right:7px;box-shadow:0 0 12px var(--red)}h1{font-size:34px;line-height:1.12;letter-spacing:-1.8px;margin:18px 0 10px;font-weight:800}h1 em{font-style:normal;color:#ff5a5f}.hero p,.page-heading p{font-size:12px;line-height:1.7;color:#aaa8ad;max-width:260px;margin:0 0 20px}.primary-btn{position:relative;z-index:2;border:0;border-radius:12px;background:var(--red);color:white;padding:13px 16px;font:700 11px Manrope;box-shadow:0 8px 24px #e72e3c33}.primary-btn span{margin-left:18px}.hero-orb{position:absolute;border-radius:50%;pointer-events:none}.orb-one{width:190px;height:190px;right:-65px;top:35px;background:radial-gradient(circle at 35% 35%,#ff575f66,#f0444400 68%);border:1px solid #ff62621c}.orb-two{width:110px;height:110px;right:8px;top:100px;border:1px solid #ff626226}.section-head{display:flex;justify-content:space-between;align-items:end;margin:0 0 14px}.section-head h2{font-size:21px;letter-spacing:-.8px;margin:5px 0 0}.text-btn{border:0;background:none;color:#ff696d;font:700 11px Manrope;padding:8px 0}.app-list{display:grid;gap:10px}.app-card{display:flex;align-items:center;gap:12px;padding:12px;background:var(--panel);border:1px solid var(--line);border-radius:17px;min-width:0}.app-icon{width:52px;height:52px;flex:0 0 52px;border-radius:15px;display:grid;place-items:center;font-size:22px;font-weight:800;color:white;background:linear-gradient(145deg,#3a2529,#19191d);border:1px solid #ffffff0c}.app-icon.red{background:linear-gradient(145deg,#a92b38,#41171f)}.app-icon.blue{background:linear-gradient(145deg,#344d78,#1b263c)}.app-icon.green{background:linear-gradient(145deg,#28604c,#17352c)}.app-meta{min-width:0;flex:1}.app-meta b{font-size:12px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.app-meta small{display:block;color:var(--muted);font-size:10px;margin-top:4px}.app-meta .app-desc{font-size:9px;color:#77757c;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:5px}.card-actions{display:flex;align-items:center;gap:7px}.heart-btn{border:0;background:#242328;color:#a6a3aa;width:32px;height:32px;border-radius:10px;font-size:17px}.heart-btn.saved{color:#ff555c;background:#3a1d22}.open-btn{border:1px solid #48252a;background:#28181c;color:#ff777c;border-radius:9px;padding:8px 10px;font:700 10px Manrope}.category-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.category-tile{min-height:112px;text-align:left;border:1px solid var(--line);background:var(--panel);border-radius:17px;padding:14px;color:white}.category-tile .category-icon{display:block;font-size:22px;color:#ff666d;margin-bottom:10px}.category-tile b{display:block;font-size:12px}.category-tile small{display:block;color:var(--muted);font-size:9px;margin-top:4px}.category-tile.red-tile{background:linear-gradient(145deg,#3b171d,#171316);border-color:#51252b}.page-heading{padding:20px 0 17px}.page-heading h1{font-size:32px;margin:8px 0}.page-heading p{margin:0}.search-box{height:48px;border:1px solid var(--line);background:var(--panel);border-radius:14px;display:flex;align-items:center;padding:0 14px;gap:10px;color:#aaa}.search-box span{font-size:23px}.search-box input{border:0;outline:0;background:none;color:white;width:100%;font:500 12px Manrope}.chips{display:flex;gap:7px;overflow:auto;padding:14px 0 17px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}.chip{white-space:nowrap;border:1px solid var(--line);background:var(--panel);color:#aaa;border-radius:30px;padding:8px 12px;font:600 10px Manrope}.chip.selected{background:#3a1c21;border-color:#743139;color:#ff777c}.results-line{display:flex;justify-content:space-between;color:#77757c;font-size:9px;margin:0 1px 12px}.empty-state{text-align:center;padding:45px 15px;color:#aaa;font-size:13px;line-height:1.8}.empty-state small{font-size:10px;color:#777}.hidden{display:none!important}.bottom-nav{position:fixed;z-index:5;bottom:0;left:50%;transform:translateX(-50%);width:min(560px,100%);padding:10px 15px calc(10px + env(safe-area-inset-bottom));display:flex;justify-content:space-around;background:#101013ed;backdrop-filter:blur(18px);border-top:1px solid #29292f}.nav-item{border:0;background:none;color:#77757d;display:grid;justify-items:center;gap:4px;min-width:58px;padding:3px}.nav-item span{font-size:20px;line-height:22px}.nav-item small{font:600 9px Manrope}.nav-item.active{color:#ff656b}.profile-card,.info-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;align-items:center;gap:12px}.profile-avatar{width:48px;height:48px;border-radius:16px;background:linear-gradient(145deg,#c73540,#481c25);display:grid;place-items:center;font-weight:800;font-size:18px}.profile-card b{display:block;font-size:13px}.profile-card small{display:block;color:var(--muted);font-size:9px;margin-top:4px}.profile-status{margin-left:auto;color:#ff777c;font-size:8px;letter-spacing:1px}.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}.stat-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:15px}.stat-card strong{display:block;font-size:23px}.stat-card small{font-size:9px;color:var(--muted)}.info-card{display:block}.info-card b{font-size:12px}.info-card p{font-size:10px;color:#aaa;line-height:1.7}.info-card small{font-size:9px;color:#777}.modal-backdrop{position:fixed;inset:0;z-index:10;background:#000b;display:flex;align-items:flex-end;justify-content:center}.detail-sheet{position:relative;width:min(560px,100%);max-height:88dvh;overflow:auto;background:#141417;border:1px solid #333139;border-radius:24px 24px 0 0;padding:25px 20px calc(28px + env(safe-area-inset-bottom));animation:sheet .22s ease}@keyframes sheet{from{transform:translateY(40px)}to{transform:none}}.close-btn{position:absolute;right:16px;top:15px;font-size:22px}.detail-hero{display:flex;align-items:center;gap:14px;padding:15px 0 20px}.detail-hero .app-icon{width:68px;height:68px;flex-basis:68px;font-size:27px}.detail-hero h2{font-size:19px;margin:0 0 5px}.detail-hero small{color:var(--muted);font-size:10px}.detail-copy{font-size:11px;line-height:1.8;color:#b4b1b8}.detail-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}.fact{background:#202025;border-radius:12px;padding:11px}.fact b{display:block;font-size:11px}.fact small{font-size:8px;color:var(--muted)}.install-note{background:#241a1d;border:1px solid #4b292e;border-radius:13px;padding:13px;font-size:10px;line-height:1.7;color:#c9b7ba;margin:15px 0}.download-btn{width:100%;border:0;background:var(--red);color:white;border-radius:13px;padding:14px;font:800 11px Manrope}.toast{position:fixed;z-index:20;bottom:90px;left:50%;transform:translate(-50%,15px);opacity:0;pointer-events:none;background:#29282d;border:1px solid #45434a;color:white;border-radius:12px;padding:11px 15px;font-size:10px;transition:.2s;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0)}@media(min-width:600px){.app-shell{padding-top:8px}.hero{min-height:280px}}
+
+  </style>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="iPA Store — главная"><span class="brand-mark">iPA</span><span>STORE</span></a>
+      <button class="icon-btn" id="profileBtn" aria-label="Профиль"><span id="avatar">U</span></button>
+    </header>
+
+    <main>
+      <section class="screen active" id="homeScreen">
+        <div class="hero">
+          <div class="eyebrow"><span class="live-dot"></span> APP MARKETPLACE</div>
+          <h1>Твои приложения.<br><em>Твои правила.</em></h1>
+          <p>Каталог IPA-приложений и игр для iPhone в одном месте.</p>
+          <button class="primary-btn" data-go="catalog">Открыть каталог <span>↗</span></button>
+          <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
+        </div>
+
+        <div class="section-head"><div><span class="eyebrow">ОБНОВЛЯЙСЯ</span><h2>Популярное</h2></div><button class="text-btn" data-go="catalog">Все <span>→</span></button></div>
+        <div class="app-list" id="featuredList"></div>
+
+        <div class="section-head"><div><span class="eyebrow">ВЫБИРАЙ СВОЁ</span><h2>Категории</h2></div></div>
+        <div class="category-grid">
+          <button class="category-tile" data-category="Приложения"><span class="category-icon">▣</span><b>Приложения</b><small>Полезные инструменты</small></button>
+          <button class="category-tile red-tile" data-category="Игры"><span class="category-icon">⌁</span><b>Игры</b><small>Играй на iPhone</small></button>
+          <button class="category-tile" data-category="Модификации"><span class="category-icon">✳</span><b>Модификации</b><small>Изменённые версии</small></button>
+          <button class="category-tile" data-category="Утилиты"><span class="category-icon">⌘</span><b>Утилиты</b><small>Инструменты и сервисы</small></button>
+        </div>
+      </section>
+
+      <section class="screen" id="catalogScreen">
+        <div class="page-heading"><span class="eyebrow">БИБЛИОТЕКА</span><h1>Каталог</h1><p>Найди приложение для себя.</p></div>
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Название приложения..." autocomplete="off" /></label>
+        <div class="chips" id="filterChips">
+          <button class="chip selected" data-filter="Все">Все</button><button class="chip" data-filter="Приложения">Приложения</button><button class="chip" data-filter="Игры">Игры</button><button class="chip" data-filter="Модификации">Модификации</button><button class="chip" data-filter="Утилиты">Утилиты</button>
+        </div>
+        <div class="results-line"><span id="resultCount">0 приложений</span><span>Сначала популярные</span></div>
+        <div class="app-list" id="catalogList"></div>
+        <div class="empty-state hidden" id="emptyState">Ничего не найдено.<br><small>Попробуй изменить запрос или категорию.</small></div>
+      </section>
+
+      <section class="screen" id="favoritesScreen">
+        <div class="page-heading"><span class="eyebrow">ТВОЯ КОЛЛЕКЦИЯ</span><h1>Избранное</h1><p>Сохранённые приложения.</p></div>
+        <div class="app-list" id="favoritesList"></div>
+        <div class="empty-state" id="favoritesEmpty">Здесь пока пусто.<br><small>Нажми на сердечко в карточке приложения.</small></div>
+      </section>
+
+      <section class="screen" id="profileScreen">
+        <div class="page-heading"><span class="eyebrow">АККАУНТ</span><h1>Профиль</h1><p>Твоя активность в iPA Store.</p></div>
+        <div class="profile-card"><div class="profile-avatar" id="bigAvatar">U</div><div><b id="profileName">Гость</b><small id="profileHandle">Открой магазин через Telegram</small></div><span class="profile-status">USER</span></div>
+        <div class="stats-grid"><div class="stat-card"><strong id="favoriteCount">0</strong><small>В избранном</small></div><div class="stat-card"><strong>0</strong><small>Загрузок</small></div></div>
+        <div class="info-card"><b>О проекте</b><p>iPA Store — каталог приложений для iPhone. Перед установкой проверяй источник файла, подпись и совместимость с устройством.</p><small>Версия прототипа 0.1.0</small></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Основная навигация">
+      <button class="nav-item active" data-screen="home"><span>⌂</span><small>Главная</small></button>
+      <button class="nav-item" data-screen="catalog"><span>▦</span><small>Каталог</small></button>
+      <button class="nav-item" data-screen="favorites"><span>♡</span><small>Избранное</small></button>
+      <button class="nav-item" data-screen="profile"><span>◉</span><small>Профиль</small></button>
+    </nav>
+  </div>
+
+  <div class="modal-backdrop hidden" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+    <div class="detail-sheet"><button class="close-btn" id="closeModal" aria-label="Закрыть">×</button><div id="detailContent"></div></div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script>
+const demoApps = [
+  {id:'app-001',name:'Pixel Tools',category:'Утилиты',version:'1.4.2',size:'18 МБ',ios:'iOS 15+',description:'Набор полезных инструментов и небольших помощников для повседневных задач.',icon:'✣',tone:'red',featured:true,downloads:1280,ipaUrl:null,verified:false},
+  {id:'app-002',name:'Night Drive',category:'Игры',version:'2.1.0',size:'246 МБ',ios:'iOS 16+',description:'Атмосферная аркадная гонка с ночными трассами и короткими заездами.',icon:'⌁',tone:'blue',featured:true,downloads:940,ipaUrl:null,verified:false},
+  {id:'app-003',name:'Focus Notes',category:'Приложения',version:'3.0.1',size:'32 МБ',ios:'iOS 15+',description:'Минималистичные заметки, списки дел и быстрые идеи в одном приложении.',icon:'N',tone:'green',featured:true,downloads:820,ipaUrl:null,verified:false},
+  {id:'app-004',name:'Music Plus',category:'Модификации',version:'1.8.0',size:'—',ios:'Уточняется',description:'Демонстрационная карточка модифицированного приложения. Перед публикацией проверьте права на распространение.',icon:'♫',tone:'red',featured:false,downloads:510,ipaUrl:null,verified:false},
+  {id:'app-005',name:'Orbit Quest',category:'Игры',version:'1.2.3',size:'—',ios:'Уточняется',description:'Космическая головоломка с уровнями на короткие игровые сессии.',icon:'✦',tone:'blue',featured:false,downloads:430,ipaUrl:null,verified:false},
+  {id:'app-006',name:'File Pocket',category:'Утилиты',version:'0.9.5',size:'—',ios:'Уточняется',description:'Удобный файловый органайзер. Демо-запись для проверки интерфейса каталога.',icon:'▤',tone:'green',featured:false,downloads:290,ipaUrl:null,verified:false}
+];
+let apps = [...demoApps];
+let activeFilter = 'Все';
+let favorites = new Set();
+let toastTimer;
+const $ = s => document.querySelector(s);
+const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function iconClass(tone){return ['red','blue','green'].includes(tone)?tone:''}
+function card(app){const saved=favorites.has(app.id);return `<article class="app-card"><div class="app-icon ${iconClass(app.tone)}">${esc(app.icon)}</div><div class="app-meta"><b>${esc(app.name)}</b><small>${esc(app.category)} · v${esc(app.version)}</small><div class="app-desc">${esc(app.description)}</div></div><div class="card-actions"><button class="heart-btn ${saved?'saved':''}" data-fav="${esc(app.id)}" aria-label="В избранное">${saved?'♥':'♡'}</button><button class="open-btn" data-detail="${esc(app.id)}">Открыть</button></div></article>`}
+function render(){
+  $('#featuredList').innerHTML=apps.filter(a=>a.featured).slice(0,4).map(card).join('');
+  const query=$('#searchInput').value.trim().toLowerCase();
+  const filtered=apps.filter(a=>(activeFilter==='Все'||a.category===activeFilter)&&(`${a.name} ${a.category} ${a.description}`).toLowerCase().includes(query));
+  $('#catalogList').innerHTML=filtered.map(card).join('');$('#resultCount').textContent=`${filtered.length} ${plural(filtered.length)}`;$('#emptyState').classList.toggle('hidden',filtered.length!==0);
+  const favApps=apps.filter(a=>favorites.has(a.id));$('#favoritesList').innerHTML=favApps.map(card).join('');$('#favoritesEmpty').classList.toggle('hidden',favApps.length!==0);$('#favoriteCount').textContent=favApps.length;
+}
+function plural(n){return n===1?'приложение':n>=2&&n<=4?'приложения':'приложений'}
+function showToast(message){const el=$('#toast');el.textContent=message;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2200)}
+function go(screen){document.querySelectorAll('.screen').forEach(el=>el.classList.remove('active'));$(`#${screen}Screen`).classList.add('active');document.querySelectorAll('.nav-item').forEach(el=>el.classList.toggle('active',el.dataset.screen===screen));window.scrollTo({top:0,behavior:'smooth'});if(screen==='favorites'||screen==='catalog')render()}
+function openDetail(id){const app=apps.find(a=>a.id===id);if(!app)return;$('#detailContent').innerHTML=`<div class="detail-hero"><div class="app-icon ${iconClass(app.tone)}">${esc(app.icon)}</div><div><h2 id="detailTitle">${esc(app.name)}</h2><small>${esc(app.category)} · версия ${esc(app.version)}</small></div></div><p class="detail-copy">${esc(app.description)}</p><div class="detail-facts"><div class="fact"><b>${esc(app.size)}</b><small>Размер файла</small></div><div class="fact"><b>${esc(app.ios)}</b><small>Совместимость</small></div><div class="fact"><b>${app.verified?'Проверено':'Не проверено'}</b><small>Статус файла</small></div></div><div class="install-note"><b>Перед установкой</b><br>Скачивание IPA не устанавливает приложение автоматически. Для установки iOS требует допустимую подпись и совместимый способ установки. Проверяй источник и разрешение на распространение файла.</div><button class="download-btn" data-download="${esc(app.id)}">${app.ipaUrl?'Скачать IPA':'Файл пока не добавлен'}</button>`;$('#detailModal').classList.remove('hidden')}
+function closeDetail(){$('#detailModal').classList.add('hidden')}
+document.addEventListener('click',e=>{const nav=e.target.closest('[data-screen]');if(nav)go(nav.dataset.screen);const goBtn=e.target.closest('[data-go]');if(goBtn)go(goBtn.dataset.go);const category=e.target.closest('[data-category]');if(category){activeFilter=category.dataset.category;document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('selected',c.dataset.filter===activeFilter));go('catalog');render()}const fav=e.target.closest('[data-fav]');if(fav){const id=fav.dataset.fav;favorites.has(id)?favorites.delete(id):favorites.add(id);render()}const detail=e.target.closest('[data-detail]');if(detail)openDetail(detail.dataset.detail);const download=e.target.closest('[data-download]');if(download){const app=apps.find(a=>a.id===download.dataset.download);if(app?.ipaUrl){window.location.href=app.ipaUrl}else showToast('IPA-файл ещё не загружен администратором')}});
+$('#filterChips').addEventListener('click',e=>{const chip=e.target.closest('[data-filter]');if(!chip)return;activeFilter=chip.dataset.filter;document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('selected',c===chip));render()});$('#searchInput').addEventListener('input',render);$('#closeModal').addEventListener('click',closeDetail);$('#detailModal').addEventListener('click',e=>{if(e.target.id==='detailModal')closeDetail()});$('#profileBtn').addEventListener('click',()=>go('profile'));
+function initTelegram(){const tg=window.Telegram?.WebApp;if(!tg)return;tg.ready();tg.expand();try{const user=tg.initDataUnsafe?.user;if(user){const name=[user.first_name,user.last_name].filter(Boolean).join(' ')||'Пользователь';$('#profileName').textContent=name;$('#profileHandle').textContent=user.username?`@${user.username}`:'Telegram пользователь';const letter=(user.first_name||'U').slice(0,1).toUpperCase();$('#avatar').textContent=letter;$('#bigAvatar').textContent=letter}}catch(_){}}
+initTelegram();render();
+
+  </script>
+</body>
+</html>
